@@ -95,23 +95,56 @@
 .card h3{margin:10px 0 5px}
 .card p{color:#ff9800;font-weight:600}
 
+./* FLOATING BUTTON TOP CENTER */
 .float-btn{
   position:fixed;
-  bottom:20px;
-  right:20px;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
   display:flex;
-  flex-direction:column;
-  gap:10px;
+  gap:12px;
+  z-index:9999;
+  transition:opacity 0.4s ease, transform 0.4s ease;
 }
 
+/* HIDE ON SCROLL */
+.float-btn.hide{
+  opacity:0;
+  pointer-events:none;
+  transform:translate(-50%, -20px);
+}
+
+/* COMMON BUTTON STYLE */
 .float-btn a{
-  padding:12px 20px;
+  padding:14px 22px;
   border-radius:30px;
   color:#fff;
   text-decoration:none;
   font-weight:600;
   text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
-.wa{background:#25d366}
-.mail{background:#007bff}
+/* WHATSAPP PULSE */
+.float-btn .wa{
+  background:#25d366;
+  animation:pulse 1.8s infinite;
+}
+
+/* EMAIL */
+.float-btn .mail{
+  background:#007bff;
+}
+
+/* PULSE ANIMATION */
+@keyframes pulse{
+  0%{
+    box-shadow:0 0 0 0 rgba(37,211,102,0.7);
+  }
+  70%{
+    box-shadow:0 0 0 18px rgba(37,211,102,0);
+  }
+  100%{
+    box-shadow:0 0 0 0 rgba(37,211,102,0);
+  }
+}
