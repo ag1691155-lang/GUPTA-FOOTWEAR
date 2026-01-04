@@ -149,8 +149,30 @@ function filterItems(cat){
     c.style.display = (cat === 'all' || c.classList.contains(cat)) ? 'block' : 'none';
   });
 }
+  /* FLOAT BUTTON HIDE ON SCROLL */
+let lastScroll = 0;
+const floatBtn = document.querySelector('.float-btn');
+
+if (floatBtn) {
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 80) {
+      // scroll down → hide
+      floatBtn.classList.add('hide');
+    } else {
+      // scroll up → show
+      floatBtn.classList.remove('hide');
+    }
+
+    lastScroll = currentScroll;
+  });
+}
+
+
 </script>
 
 </body>
 </html>
+
 
