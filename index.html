@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gupta Footwear – Neemrana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Gupta Footwear Neemrana – Best footwear shop in Neemrana. Shoes, sandals & slippers at best prices.">
+  <meta name="keywords" content="Gupta Footwear, Shoes Neemrana, Footwear Shop Neemrana">
+  <meta name="author" content="Gupta Footwear">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HERO SLIDER -->
+<section class="hero">
+  <div class="slide active" style="background-image:url('https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
+  <div class="slide" style="background-image:url('https://images.pexels.com/photos/2908975/pexels-photo-2908975.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
+  <div class="slide" style="background-image:url('https://images.pexels.com/photos/2300334/pexels-photo-2300334.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
+
+  <div class="hero-overlay">
+    <h1>Gupta Footwear</h1>
+    <p>Quality Footwear at Best Prices</p>
+    <a href="#products" class="btn">Explore Collection</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <h2>About Us</h2>
+  <p>
+    Gupta Footwear is a trusted footwear shop in Neemrana offering stylish,
+    durable and affordable footwear for men, women and kids.
+  </p>
+</section>
+
+<!-- FEATURES -->
+<section class="section gray">
+  <div class="features">
+    <div>✔ Premium Quality</div>
+    <div>✔ Affordable Prices</div>
+    <div>✔ Latest Designs</div>
+    <div>✔ Trusted Local Shop</div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="section">
+  <h2>Our Footwear Collection</h2>
+
+  <!-- FILTER BUTTONS -->
+  <div class="filters">
+    <button onclick="filterItems('all')">All</button>
+    <button onclick="filterItems('men')">Men</button>
+    <button onclick="filterItems('women')">Women</button>
+    <button onclick="filterItems('sports')">Sports</button>
+  </div>
+
+  <div class="products">
+    <div class="card men">
+      <img src="https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg">
+      <h3>Men Sneakers</h3>
+      <p>₹1,299</p>
+    </div>
+
+    <div class="card sports">
+      <img src="https://images.pexels.com/photos/2908975/pexels-photo-2908975.jpeg">
+      <h3>Sports Shoes</h3>
+      <p>₹1,499</p>
+    </div>
+
+    <div class="card men">
+      <img src="https://images.pexels.com/photos/5698854/pexels-photo-5698854.jpeg">
+      <h3>Casual Shoes</h3>
+      <p>₹999</p>
+    </div>
+
+    <div class="card women">
+      <img src="https://images.pexels.com/photos/2300334/pexels-photo-2300334.jpeg">
+      <h3>Women Sandals</h3>
+      <p>₹799</p>
+    </div>
+
+    <div class="card women">
+      <img src="https://images.pexels.com/photos/5863630/pexels-photo-5863630.jpeg">
+      <h3>New Arrivals</h3>
+      <p>Starting ₹599</p>
+    </div>
+
+    <div class="card sports">
+      <img src="https://images.pexels.com/photos/5864249/pexels-photo-5864249.jpeg">
+      <h3>Training Shoes</h3>
+      <p>₹1,199</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section gray" id="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Shop No. 23, Modern Shopping Complex, Near PNB Bank, Neemrana 301705</p>
+  <p>📞 <a href="tel:+919166401598">+91 9166401598</a></p>
+  <p>✉️ <a href="mailto:ag1691155@gmail.com">ag1691155@gmail.com</a></p>
+</section>
+
+<!-- MAP -->
+<section class="section">
+  <h2>Our Location</h2>
+  <iframe
+    src="https://www.google.com/maps?q=Shop%20No.%2023%20Modern%20Shopping%20Complex%20Near%20PNB%20Bank%20Neemrana%20301705&output=embed"
+    width="100%" height="350" style="border:0;" loading="lazy">
+  </iframe>
+</section>
+
+<!-- FLOATING WHATSAPP + EMAIL -->
+<div class="float-btn">
+  <a class="wa"
+     href="https://wa.me/919166401598?text=Hello%20Gupta%20Footwear%2C%20I%20want%20to%20know%20about%20your%20shoes%20collection."
+     target="_blank">
+     WhatsApp
+  </a>
+
+  <a class="mail" href="mailto:ag1691155@gmail.com">Email</a>
+</div>
+
+<!-- JS -->
+<script>
+/* HERO SLIDER */
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+setInterval(() => {
+  slides[index].classList.remove('active');
+  index = (index + 1) % slides.length;
+  slides[index].classList.add('active');
+}, 3500);
+
+/* FILTER */
+function filterItems(cat){
+  let cards = document.querySelectorAll('.card');
+  cards.forEach(c=>{
+    c.style.display = (cat === 'all' || c.classList.contains(cat)) ? 'block' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
