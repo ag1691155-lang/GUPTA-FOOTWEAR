@@ -1,187 +1,207 @@
+:root{
+  --primary:#25d366;
+  --secondary:#007bff;
+  --dark:#111;
+  --light:#fff;
+  --gray:#f5f5f5;
+  --text:#333;
+}
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+  font-family:'Poppins', sans-serif;
 }
 
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
+.section{
+  padding:70px 0;
+  text-align:center;
+}
+
+.light{background:var(--light);}
+.gray{background:var(--gray);}
+
+/* HERO */
 .hero{
-  height:90vh;
   position:relative;
-  overflow:hidden;
-}
-
-.slide{
-  position:absolute;
-  top:0;left:0;
-  width:100%;
-  height:100%;
+  height:85vh;
+  background:url("https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg");
   background-size:cover;
   background-position:center;
-  opacity:0;
-  transition:opacity 1s ease;
 }
-.slide.active{opacity:1}
 
 .hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+}
+
+.hero-content{
   position:relative;
   z-index:2;
-  background:rgba(0,0,0,0.6);
   height:100%;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  color:#fff;
+  color:var(--light);
   text-align:center;
 }
 
-.hero h1{font-size:50px}
-.hero p{font-size:20px;margin:10px 0 20px}
-
-.btn{
-  background:#ff9800;
-  padding:12px 30px;
-  color:#fff;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:600;
+.hero h1{
+  font-size:48px;
+  font-weight:700;
 }
 
-.section{
-  padding:60px 20px;
-  text-align:center;
+.hero p{
+  font-size:20px;
+  margin-top:10px;
 }
 
-.gray{background:#f4f4f4}
+/* TEXT */
+.desc{
+  max-width:800px;
+  margin:20px auto 0;
+  font-size:17px;
+  line-height:1.7;
+  color:var(--text);
+}
 
+/* FEATURES */
 .features{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
   font-weight:600;
 }
 
-.filters{margin-bottom:20px}
-.filters button{
-  margin:5px;
-  padding:8px 16px;
-  border:none;
-  border-radius:20px;
-  background:#333;
-  color:#fff;
-  cursor:pointer;
+.features div{
+  background:var(--light);
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-.products{
+/* COLLECTION */
+.collection{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  gap:25px;
+  margin-top:40px;
 }
 
-.card{
-  background:#fff;
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+.box{
+  background:var(--light);
+  padding:45px 20px;
+  border-radius:16px;
+  font-weight:600;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:.3s;
 }
 
-.card img{
+.box:hover{
+  transform:translateY(-6px);
+}
+
+/* CONTACT */
+.contact{
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+    url("https://images.pexels.com/photos/19090/pexels-photo.jpg");
+  background-size:cover;
+  background-position:center;
+  color:var(--light);
+}
+
+.contact h2{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+.contact p{
+  font-size:18px;
+  margin:8px 0;
+}
+
+/* MAP */
+.map iframe{
   width:100%;
-  height:220px;
-  object-fit:cover;
+  height:350px;
+  border:0;
 }
 
-.card h3{margin:10px 0 5px}
-.card p{color:#ff9800;font-weight:600}
-
-./* FLOATING BUTTON TOP CENTER */
+/* FLOAT BUTTON */
 .float-btn{
   position:fixed;
-  top:20px;
+  top:15px;
   left:50%;
   transform:translateX(-50%);
   display:flex;
   gap:12px;
   z-index:9999;
-  transition:opacity 0.4s ease, transform 0.4s ease;
+  transition:opacity .4s ease, transform .4s ease;
 }
 
-/* HIDE ON SCROLL */
-.float-btn.hide{
-  opacity:0;
-  pointer-events:none;
-  transform:translate(-50%, -20px);
-}
-
-.float-btn{
-  position:fixed;
-  top:15px;                 /* screen ke bilkul upar */
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:12px;
-  z-index:10000;            /* map se upar rahe */
-  transition:opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* Button style */
 .float-btn a{
   padding:14px 22px;
   border-radius:30px;
-  color:#fff;
+  color:var(--light);
   text-decoration:none;
   font-weight:600;
-  text-align:center;
-  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
 }
 
-/* WhatsApp */
 .float-btn .wa{
-  background:#25d366;
+  background:var(--primary);
   animation:pulse 1.8s infinite;
 }
 
-/* Email */
 .float-btn .mail{
-  background:#007bff;
+  background:var(--secondary);
 }
 
-/* Hide on scroll */
 .float-btn.hide{
   opacity:0;
   pointer-events:none;
   transform:translate(-50%, -30px);
 }
 
-/* Pulse animation */
 @keyframes pulse{
-  0%{ box-shadow:0 0 0 0 rgba(37,211,102,0.7); }
-  70%{ box-shadow:0 0 0 18px rgba(37,211,102,0); }
-  100%{ box-shadow:0 0 0 0 rgba(37,211,102,0); }
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.7);}
+  70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
+/* MOBILE */
+@media (max-width:768px){
+  .hero{height:70vh;}
+  .hero h1{font-size:32px;}
+  .hero p{font-size:16px;}
 
-/* WHATSAPP PULSE */
-.float-btn .wa{
-  background:#25d366;
-  animation:pulse 1.8s infinite;
-}
+  .section{padding:50px 0;}
 
-/* EMAIL */
-.float-btn .mail{
-  background:#007bff;
-}
+  h2{font-size:26px;}
 
-/* PULSE ANIMATION */
-@keyframes pulse{
-  0%{
-    box-shadow:0 0 0 0 rgba(37,211,102,0.7);
+  .collection,
+  .features{
+    grid-template-columns:1fr;
+    gap:18px;
   }
-  70%{
-    box-shadow:0 0 0 18px rgba(37,211,102,0);
+
+  .float-btn{
+    top:auto;
+    bottom:15px;
   }
-  100%{
-    box-shadow:0 0 0 0 rgba(37,211,102,0);
+
+  .float-btn a{
+    padding:12px 18px;
+    font-size:14px;
   }
 }
